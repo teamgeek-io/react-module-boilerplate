@@ -1,0 +1,64 @@
+{
+  "plugins": ["@typescript-eslint", "prettier", "react-hooks"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "none",
+          "requireLast": false
+        },
+        "singleline": {
+          "delimiter": "comma",
+          "requireLast": false
+        }
+      }
+    ],
+    // note you must disable the base rule as it can report incorrect errors
+    "camelcase": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-ignore": "off"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "console": false,
+    "alert": false,
+    "require": false,
+    "setTimeout": false,
+    "clearTimeout": false,
+    "setInterval": false,
+    "clearInterval": false,
+    "process": false,
+    "fetch": false,
+    "localStorage": false,
+    "Intl": false,
+    "module": false,
+    "global": false,
+    "navigator": false,
+    "IntersectionObserver": false
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}
